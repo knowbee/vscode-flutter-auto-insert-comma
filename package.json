@@ -3,6 +3,7 @@
   "displayName": "vscode-flutter-auto-insert-comma",
   "description": "Auto insert a comma to the end of line as you write flutter widgets",
   "publisher": "knowbee",
+	"icon": "images/icon.png",
   "author": {
     "name": "Igwaneza Bruce",
     "email": "knowbeeinc@gmail.com"
