@@ -1,0 +1,101 @@
+{
+  "name": "vscode-flutter-auto-insert-comma",
+  "displayName": "vscode-flutter-auto-insert-comma",
+  "description": "Auto insert a comma to the end of line as you write flutter widgets",
+  "publisher": "knowbee",
+  "author": {
+    "name": "Igwaneza Bruce",
+    "email": "knowbeeinc@gmail.com"
+  },
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.72.0"
+  },
+  "categories": [
+		"Other",
+		"Programming Languages"
+	],
+	"keywords": [
+		"AutoComplete",
+		"insert",
+		"comma",
+		"dart",
+		"flutter"
+	],
+	"bugs": {
+		"url": "https://github.com/knowbee/vscode-flutter-auto-insert-comma/issues",
+		"email": "knowbeeinc@gmail.com"
+	},
+	"homepage": "https://github.com/knowbee/vscode-flutter-auto-insert-comma",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/knowbee/vscode-flutter-auto-insert-comma.git"
+	},
+	"activationEvents": [
+		"*",
+    "onCommand:flutter-auto-insert-comma.insertComma"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "flutter-auto-insert-comma.insertComma",
+				"title": "Insert Comma"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "flutter-auto-insert-comma.insertComma",
+				"key": "alt+,",
+				"mac": "cmd+alt+,"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "Auto Insert Comma configuration",
+			"properties": {
+				"flutter-auto-insert-comma.activationFiles": {
+					"type": "array",
+					"default": [
+						"dart"
+					],
+					"description": "Set the files will be activated.",
+					"scope": "resource"
+				},
+				"flutter-auto-insert-comma.disableFiles": {
+					"type": "array",
+					"default": [],
+					"description": "Set the files will be disabled",
+					"scope": "resource"
+				},
+				"flutter-auto-insert-comma.enableAutoInsertComma": {
+					"type": "boolean",
+					"default": true,
+					"description": "Enable AutoInsertComma.",
+					"scope": "resource"
+				}
+			}
+		}
+	},
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "yarn run compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.72.0",
+    "@types/glob": "^8.0.0",
+    "@types/mocha": "^10.0.0",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.38.1",
+    "@typescript-eslint/parser": "^5.38.1",
+    "eslint": "^8.24.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.0.0",
+    "typescript": "^4.8.4",
+    "@vscode/test-electron": "^2.1.5"
+  }
+}
